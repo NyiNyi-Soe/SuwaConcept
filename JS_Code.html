@@ -1,0 +1,258 @@
+<html>
+
+/*Header*/
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+
+/*Footer*/
+<script>
+  $(function() { 
+    var defaultLanguage = 'fr';
+    var lang = location.pathname.split("/")[1];
+    var defaultClass = 'lang-'+defaultLanguage+'';
+    var itemParent = "nav [class*='collection'],nav [class*='folder'],nav [class*='index'],nav [class*='group']";
+    if (lang == "" || lang.length > 2 ){
+      var lang = defaultLanguage;
+    }
+
+    $('a[href="/"]').addClass('lang-'+defaultLanguage+'').parents(itemParent).addClass('lang-'+defaultLanguage+'');
+    $('nav a:link:not([href^="http://"]):not([href^="https://"])').each(function () {
+      var langType = $(this).attr('href').split("/")[1];
+      var multiLanguageClass = 'multilanguage lang-' + langType + '';
+      if (undefined !== langType && langType.length <= 2) 
+        $(this).addClass(multiLanguageClass).parents(itemParent).addClass(multiLanguageClass);
+    });
+    $('nav button').each(function () {
+      var langTypeFolder = $(this).attr('data-controller-folder-toggle').split("/")[0];
+      var multiLanguageClass = 'multilanguage lang-' + langTypeFolder + '';
+      if (undefined !== langTypeFolder && langTypeFolder.length <= 2) 
+        $(this).addClass(multiLanguageClass);
+    });
+
+    if (lang == "en") {
+      $('a[href="/"]').attr("href", "/en/accueil/");
+    }
+
+
+
+    const enLang = document.querySelector('.lang-en');
+    const frLang = document.querySelector('.lang-fr');
+    if (lang == "en") {
+      $('footer.sections section:first-child').remove();
+      enLang.style.opacity = '0.3';
+
+    } else if(lang == "fr"){
+      $('footer.sections section:last-child').remove();
+      frLang.style.opacity = '0.3';
+    }
+
+
+    $('.exclude-me,.exclude-me a').addClass('exclude');
+    $('.sqs-svg-icon--list a,.SocialLinks-link').addClass('exclude');
+
+    $('.multilanguage:not(".lang-'+lang+',.exclude")').remove();
+  });
+</script>
+
+
+
+
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/6.2.0/css/flag-icons.css">
+<script>
+  $('body').prepend('<div class="language"><a href="/fr/accueil" class="lang-fr">FR&nbsp;<span class="fi fi-fr"></span></a> | <a href="/en/accueil/" class="lang-en"><span class="fi fi-gb"></span>&nbsp;EN</a></div>');
+</script>
+
+
+
+<script>
+  $(function () {
+    switch (window.location.pathname) {
+      case "/en/appartements-signature":
+        $(".language a.lang-en").attr("href", "/en/appartements-signature");
+        $(".language a.lang-fr").attr("href", "/fr/appartements-signature");
+        break;
+      case "/fr/appartements-signature":
+        $(".language a.lang-en").attr("href", "/en/appartements-signature");
+        $(".language a.lang-fr").attr("href", "/fr/appartements-signature");
+        break;
+      case "/en/appartements-partenaires":
+        $(".language a.lang-en").attr("href", "/en/appartements-partenaires");
+        $(".language a.lang-fr").attr("href", "/fr/appartements-partenaires");
+        break;
+      case "/fr/appartements-partenaires":
+        $(".language a.lang-en").attr("href", "/en/appartements-partenaires");
+        $(".language a.lang-fr").attr("href", "/fr/appartements-partenaires");
+        break;
+      case "/en/experience":
+        $(".language a.lang-en").attr("href", "/en/experience");
+        $(".language a.lang-fr").attr("href", "/fr/experience");
+        break;
+      case "/fr/experience":
+        $(".language a.lang-en").attr("href", "/en/experience");
+        $(".language a.lang-fr").attr("href", "/fr/experience");
+        break;
+      case "/en/proprietaires":
+        $(".language a.lang-en").attr("href", "/en/proprietaires");
+        $(".language a.lang-fr").attr("href", "/fr/proprietaires");
+        break;
+      case "/fr/proprietaires":
+        $(".language a.lang-en").attr("href", "/en/proprietaires");
+        $(".language a.lang-fr").attr("href", "/fr/proprietaires");
+        break;
+      case "/en/entreprises":
+        $(".language a.lang-en").attr("href", "/en/entreprises");
+        $(".language a.lang-fr").attr("href", "/fr/entreprises");
+        break;
+      case "/fr/entreprises":
+        $(".language a.lang-en").attr("href", "/en/entreprises");
+        $(".language a.lang-fr").attr("href", "/fr/entreprises");
+        break;
+      case "/en/contact-us":
+        $(".language a.lang-en").attr("href", "/en/contact-us");
+        $(".language a.lang-fr").attr("href", "/fr/contact-us");
+        break;
+      case "/fr/contact-us":
+        $(".language a.lang-en").attr("href", "/en/contact-us");
+        $(".language a.lang-fr").attr("href", "/fr/contact-us");
+        break;
+      case "/en/notrehistoire":
+        $(".language a.lang-en").attr("href", "/en/notrehistoire");
+        $(".language a.lang-fr").attr("href", "/fr/notrehistoire");
+        break;
+      case "/fr/notrehistoire":
+        $(".language a.lang-en").attr("href", "/en/notrehistoire");
+        $(".language a.lang-fr").attr("href", "/fr/notrehistoire");
+        break;
+      case "/en/partenaires":
+        $(".language a.lang-en").attr("href", "/en/partenaires");
+        $(".language a.lang-fr").attr("href", "/fr/partenaires");
+        break;
+      case "/fr/partenaires":
+        $(".language a.lang-en").attr("href", "/en/partenaires");
+        $(".language a.lang-fr").attr("href", "/fr/partenaires");
+        break;
+      case "/en/politique-de-confidentialit":
+        $(".language a.lang-en").attr("href", "/en/politique-de-confidentialit");
+        $(".language a.lang-fr").attr("href", "/fr/politique-de-confidentialit");
+        break;
+      case "/fr/politique-de-confidentialit":
+        $(".language a.lang-en").attr("href", "/en/politique-de-confidentialit");
+        $(".language a.lang-fr").attr("href", "/fr/politique-de-confidentialit");
+        break;
+      case "/en/conditions-gnrales-de-vente":
+        $(".language a.lang-en").attr("href", "/en/conditions-gnrales-de-vente");
+        $(".language a.lang-fr").attr("href", "/fr/conditions-gnrales-de-vente");
+        break;
+      case "/fr/conditions-gnrales-de-vente":
+        $(".language a.lang-en").attr("href", "/en/conditions-gnrales-de-vente");
+        $(".language a.lang-fr").attr("href", "/fr/conditions-gnrales-de-vente");
+        break;
+      case "/en/leconnetable":
+        $(".language a.lang-en").attr("href", "/en/leconnetable");
+        $(".language a.lang-fr").attr("href", "/fr/leconnetable");
+        break;
+      case "/fr/leconnetable":
+        $(".language a.lang-en").attr("href", "/en/leconnetable");
+        $(".language a.lang-fr").attr("href", "/fr/leconnetable");
+        break;
+      case "/en/iolanda":
+        $(".language a.lang-en").attr("href", "/en/iolanda");
+        $(".language a.lang-fr").attr("href", "/fr/iolanda");
+        break;
+      case "/fr/iolanda":
+        $(".language a.lang-en").attr("href", "/en/iolanda");
+        $(".language a.lang-fr").attr("href", "/fr/iolanda");
+        break;
+      case "/en/lebilboquet":
+        $(".language a.lang-en").attr("href", "/en/lebilboquet");
+        $(".language a.lang-fr").attr("href", "/fr/lebilboquet");
+        break;
+      case "/fr/lebilboquet":
+        $(".language a.lang-en").attr("href", "/en/lebilboquet");
+        $(".language a.lang-fr").attr("href", "/fr/lebilboquet");
+        break;
+      case "/en/imhotep":
+        $(".language a.lang-en").attr("href", "/en/imhotep");
+        $(".language a.lang-fr").attr("href", "/fr/imhotep");
+        break;
+      case "/fr/imhotep":
+        $(".language a.lang-en").attr("href", "/en/imhotep");
+        $(".language a.lang-fr").attr("href", "/fr/imhotep");
+        break;
+      case "/en/le-58":
+        $(".language a.lang-en").attr("href", "/en/le-58");
+        $(".language a.lang-fr").attr("href", "/fr/le-58");
+        break;
+      case "/fr/le-58":
+        $(".language a.lang-en").attr("href", "/en/le-58");
+        $(".language a.lang-fr").attr("href", "/fr/le-58");
+        break;
+      case "/en/nobhill":
+        $(".language a.lang-en").attr("href", "/en/nobhill");
+        $(".language a.lang-fr").attr("href", "/fr/nobhill");
+        break;
+      case "/fr/nobhill":
+        $(".language a.lang-en").attr("href", "/en/nobhill");
+        $(".language a.lang-fr").attr("href", "/fr/nobhill");
+        break;
+      case "/en/kewathan":
+        $(".language a.lang-en").attr("href", "/en/kewathan");
+        $(".language a.lang-fr").attr("href", "/fr/kewathan");
+        break;
+      case "/fr/kewathan":
+        $(".language a.lang-en").attr("href", "/en/kewathan");
+        $(".language a.lang-fr").attr("href", "/fr/kewathan");
+        break;
+      case "/en/slo":
+        $(".language a.lang-en").attr("href", "/en/slo");
+        $(".language a.lang-fr").attr("href", "/fr/slo");
+        break;
+      case "/fr/slo":
+        $(".language a.lang-en").attr("href", "/en/slo");
+        $(".language a.lang-fr").attr("href", "/fr/slo");
+        break;
+      case "/en/villabeverly":
+        $(".language a.lang-en").attr("href", "/en/villabeverly");
+        $(".language a.lang-fr").attr("href", "/fr/villabeverly");
+        break;
+      case "/fr/villabeverly":
+        $(".language a.lang-en").attr("href", "/en/villabeverly");
+        $(".language a.lang-fr").attr("href", "/fr/villabeverly");
+        break;
+      case "/en/alta-gracia":
+        $(".language a.lang-en").attr("href", "/en/alta-gracia");
+        $(".language a.lang-fr").attr("href", "/fr/alta-gracia");
+        break;
+      case "/fr/alta-gracia":
+        $(".language a.lang-en").attr("href", "/en/alta-gracia");
+        $(".language a.lang-fr").attr("href", "/fr/alta-gracia");
+        break;
+      case "/en/harmonia":
+        $(".language a.lang-en").attr("href", "/en/harmonia");
+        $(".language a.lang-fr").attr("href", "/fr/harmonia");
+        break;
+      case "/fr/harmonia":
+        $(".language a.lang-en").attr("href", "/en/harmonia");
+        $(".language a.lang-fr").attr("href", "/fr/harmonia");
+        break;
+      case "/en/sumai":
+        $(".language a.lang-en").attr("href", "/en/sumai");
+        $(".language a.lang-fr").attr("href", "/fr/sumai");
+        break;
+      case "/fr/sumai":
+        $(".language a.lang-en").attr("href", "/en/sumai");
+        $(".language a.lang-fr").attr("href", "/fr/sumai");
+        break;
+      case "/en/eden":
+        $(".language a.lang-en").attr("href", "/en/eden");
+        $(".language a.lang-fr").attr("href", "/fr/eden");
+        break;
+      case "/fr/eden":
+        $(".language a.lang-en").attr("href", "/en/eden");
+        $(".language a.lang-fr").attr("href", "/fr/eden");
+        break;
+    }
+  });
+</script>
+
+</html>
