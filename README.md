@@ -7,5 +7,5 @@ Bilingual Website Design for Suwa Concept House Rental Service which is located 
 * English - secondary language
 
 # Home Page
-
+![headshot](SuwaScreenshot.png)
 
