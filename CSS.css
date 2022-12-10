@@ -1,0 +1,46 @@
+//language switcher
+.language {
+  color: #FFF;
+  position: absolute;
+  font:1.2rem 'adobe-garamond-pro';
+  top: 18px;
+  right: 4vw;
+  z-index: 999;
+  a {
+    color: #FFF;
+    &:hover {
+      color: #2B3B58;
+      opacity: 0.8;
+    }
+  }
+  @media (max-width: 767px){
+    top: 10px;
+    font: 14px 'adobe-garamond-pro';
+  }
+}
+
+.header-layout-nav-right .header-nav{
+  padding-right: 3vw;
+}
+//End language switcher
+
+
+
+
+
+//Custom font integration
+@font-face {
+  font-family: 'QuicksandBold';  
+  src: url(https://static1.squarespace.com/static/61f009b176c7fc4bac8cd200/t/621280b4eb7ea32d775101ba/1645379765247/Quicksand-Bold.otf), url(https://static1.squarespace.com/static/61f009b176c7fc4bac8cd200/t/621280785e29874c327d201a/1645379704970/quicksand-bold-webfont.woff), url(https://static1.squarespace.com/static/61f009b176c7fc4bac8cd200/t/62128080f2dec35876b330af/1645379712838/quicksand-bold-webfont.woff2);
+}
+h1,h2,h3,h4 {
+  font-family: 'QuicksandBold';
+}
+@font-face {
+  font-family: 'ASAPRegular';  
+  src:url(https://static1.squarespace.com/static/61f009b176c7fc4bac8cd200/t/621288653782581783478b33/1645381734285/Asap-Regular.otf), url(https://static1.squarespace.com/static/61f009b176c7fc4bac8cd200/t/62128749cb064757046997ea/1645381449559/asap-regular-webfont.woff), url(https://static1.squarespace.com/static/61f009b176c7fc4bac8cd200/t/621287645d720931aa4c08ff/1645381476328/asap-regular-webfont.woff2);
+}
+p1,p2,p3,p4 {
+  font-family: 'ASAPRegular';
+}
+//End custom font integration
